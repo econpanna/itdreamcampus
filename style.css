@@ -3764,8 +3764,8 @@ body:not(.device-touch):not(.device-sm):not(.device-xs) .portfolio-notitle .port
 	margin: 0;
 	padding: 0;
 	/* font-size: 19px; 삭제 20180210 LKM */
-	height: 80px; /* 추가 20180210 LKM */
-	font-size: 16px; /* 추가 20180210 LKM */
+	height: 60px; /* 추가 20180210 LKM */
+	font-size: 15px; /* 추가 20180210 LKM */
 }
 
 .portfolio-desc h3 a { color: #222; }
@@ -3776,7 +3776,7 @@ body:not(.device-touch):not(.device-sm):not(.device-xs) .portfolio-notitle .port
 	display: block;
 	margin-top: 3px;
 	color: #888;
-	font-size: 14px; /* 추가 20180210 LKM */
+	font-size: 12px; /* 추가 20180210 LKM */
 }
 
 .portfolio-desc span a { color: #888; }
@@ -4827,7 +4827,7 @@ body.device-touch.device-xs .portfolio-notitle .portfolio-overlay { display: non
 	width: 100%;
 	margin: 0;
 	padding: 0;
-	background-color: #F9F9F9; /* 추가 20180210 LKM */
+	background-color: #FCFCFC; /* 추가 20180210 LKM */
 	border-bottom: 3px solid #EEE; /* 추가 20180210 LKM */
 }
 
