@@ -3764,8 +3764,9 @@ body:not(.device-touch):not(.device-sm):not(.device-xs) .portfolio-notitle .port
 	margin: 0;
 	padding: 0;
 	/* font-size: 19px; 삭제 20180210 LKM */
-	height: 60px; /* 추가 20180210 LKM */
+	height: 64px; /* 추가 20180210 LKM */
 	font-size: 15px; /* 추가 20180210 LKM */
+	overflow: hidden; /* 추가 20180220 LKM */
 }
 
 .portfolio-desc h3 a { color: #222; }
