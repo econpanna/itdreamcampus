@@ -2910,10 +2910,10 @@ var SEMICOLON = SEMICOLON || {};
 				console.log('carousel: Owl Carousel not Defined.');
 				return true;
 			}
-
+		
 			var $carousel = $('.carousel-widget:not(.customjs)');
 			if( $carousel.length < 1 ){ return true; }
-
+		
 			$carousel.each( function(){
 				var element = $(this),
 					elementItems = element.attr('data-items'),
@@ -2938,8 +2938,10 @@ var SEMICOLON = SEMICOLON || {};
 					elementCenter = element.attr('data-center'),
 					elementLazy = element.attr('data-lazyload'),
 					elementVideo = element.attr('data-video'),
-					elementRTL = element.attr('data-rtl');
-
+					elementRTL = element.attr('data-rtl'),
+					elementAutoPlayTime = 5000,
+					elementAutoPlayHoverPause = true;
+		
 				if( !elementItems ) { elementItems = 4; }
 				if( !elementItemsXl ) { elementItemsXl = Number(elementItems); }
 				if( !elementItemsLg ) { elementItemsLg = Number(elementItemsXl); }
@@ -2950,20 +2952,20 @@ var SEMICOLON = SEMICOLON || {};
 				if( !elementMargin ) { elementMargin = 20; }
 				if( !elementStage ) { elementStage = 0; }
 				if( !elementStart ) { elementStart = 0; }
-
+		
 				if( !elementSlideBy ) { elementSlideBy = 1; }
 				if( elementSlideBy == 'page' ) {
 					elementSlideBy = 'page';
 				} else {
 					elementSlideBy = Number(elementSlideBy);
 				}
-
+		
 				if( elementLoop == 'true' ){ elementLoop = true; } else { elementLoop = false; }
 				if( !elementAutoPlay ){
 					elementAutoPlay = false;
-					var elementAutoPlayTime = 0;
+					elementAutoPlayHoverPause = false;
 				} else {
-					var elementAutoPlayTime = Number(elementAutoPlay);
+					elementAutoPlayTime = Number(elementAutoPlay);
 					elementAutoPlay = true;
 				}
 				if( !elementAnimateIn ) { elementAnimateIn = false; }
@@ -2976,7 +2978,7 @@ var SEMICOLON = SEMICOLON || {};
 				if( elementLazy == 'true' ){ elementLazy = true; } else { elementLazy = false; }
 				if( elementVideo == 'true' ){ elementVideo = true; } else { elementVideo = false; }
 				if( elementRTL == 'true' || $body.hasClass('rtl') ){ elementRTL = true; } else { elementRTL = false; }
-
+		
 				element.owlCarousel({
 					margin: Number(elementMargin),
 					loop: elementLoop,
@@ -2988,10 +2990,10 @@ var SEMICOLON = SEMICOLON || {};
 					center: elementCenter,
 					lazyLoad: elementLazy,
 					nav: elementNav,
-					navText: ['<i class="icon-angle-left"></i>','<i class="icon-angle-right"></i>'],
+					navText: ['<i class="icon-angle-left" />','<i class="icon-angle-right" />'],
 					autoplay: elementAutoPlay,
 					autoplayTimeout: elementAutoPlayTime,
-					autoplayHoverPause: true,
+					autoplayHoverPause: elementAutoPlayHoverPause,
 					dots: elementPagi,
 					smartSpeed: Number(elementSpeed),
 					fluidSpeed: Number(elementSpeed),
@@ -3001,7 +3003,7 @@ var SEMICOLON = SEMICOLON || {};
 					rtl: elementRTL,
 					responsive:{
 						0:{ items:Number(elementItemsXs) },
-						480:{ items:Number(elementItemsSm) },
+						576:{ items:Number(elementItemsSm) },
 						768:{ items:Number(elementItemsMd) },
 						992:{ items:Number(elementItemsLg) },
 						1200:{ items:Number(elementItemsXl) }
